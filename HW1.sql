@@ -31,7 +31,8 @@ join inventory as i
 	on i.inventory_id = r.inventory_id
 join film as f
 	on f.film_id = i.film_id		
-where c.active = 1 and c.customer_id = 11;
+where c.customer_id = 11 
+and r.return_date is null;
 
 /*Q5*/
 select f.title ,c.name
@@ -68,6 +69,5 @@ join inventory as i
 join film as f
 	on f.film_id = i.film_id
 where f.title = 'CHAINSAW UPTOWN' and c.first_name = 'MARIE' and c.last_name = 'TURNER';
-
 
 
