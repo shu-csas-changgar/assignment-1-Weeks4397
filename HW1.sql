@@ -44,16 +44,14 @@ join film as f
 where fc.category_id = 2;
 
 /*Q6*/
-select c.first_name, c.last_name, f.title, sum(p.amount)
+select c.first_name, c.last_name, f.title, f.rental_rate
 from customer as c
-join payment as p
-	on c.customer_id = p.customer_id
 join rental as r
 	on r.customer_id = c.customer_id
 join inventory as i
 	on i.inventory_id = r.inventory_id
 join film as f
-	on f.film_id = f.film_id
+	on f.film_id = i.film_id
 where c.customer_id = 95
 and f.title = 'CLOSER BANG';
 
